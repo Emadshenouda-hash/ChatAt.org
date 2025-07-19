@@ -1,0 +1,154 @@
+<!-- Simple Search Shortcode -->
+<div class="search-container">
+  <div class="search-box">
+    <input type="text" id="search-input" placeholder="{{ if eq .Site.Language.Lang "ar" }}البحث في الموقع...{{ else }}Search the site...{{ end }}">
+    <button id="search-btn" class="btn">
+      {{ if eq .Site.Language.Lang "ar" }}بحث{{ else }}Search{{ end }}
+    </button>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+<style>
+.search-container {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.search-box {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+.search-results {
+  display: none;
+}
+
+.search-result {
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  margin-bottom: 0.5rem;
+  background: var(--bg-primary);
+}
+
+.search-result h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--primary-color);
+}
+
+.search-result p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.search-result a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.search-result a:hover h3 {
+  color: var(--primary-hover);
+}
+
+.no-results {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 2rem;
+}
+</style>
+
+<script>
+// Simple client-side search functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchBtn = document.getElementById('search-btn');
+  const searchResults = document.getElementById('search-results');
+  
+  // Sample search data (in a real implementation, this would come from Hugo's search index)
+  const searchData = [
+    {
+      title: "{{ if eq .Site.Language.Lang "ar" }}حول شات آت{{ else }}About ChatAt{{ end }}",
+      url: "{{ if eq .Site.Language.Lang "ar" }}/ar{{ end }}/about/",
+      content: "{{ if eq .Site.Language.Lang "ar" }}منصة خفيفة ومتاحة لمشاركة المحتوى المكتوب{{ else }}A lightweight, accessible platform for sharing written content{{ end }}"
+    },
+    {
+      title: "{{ if eq .Site.Language.Lang "ar" }}الكتب والمنشورات{{ else }}Books & Publications{{ end }}",
+      url: "{{ if eq .Site.Language.Lang "ar" }}/ar{{ end }}/books/",
+      content: "{{ if eq .Site.Language.Lang "ar" }}مجموعة منتقاة من الكتابات والمنشورات{{ else }}A curated collection of writings and publications{{ end }}"
+    },
+    {
+      title: "{{ if eq .Site.Language.Lang "ar" }}تواصلوا معنا{{ else }}Get in Touch{{ end }}",
+      url: "{{ if eq .Site.Language.Lang "ar" }}/ar{{ end }}/contact/",
+      content: "{{ if eq .Site.Language.Lang "ar" }}طرق التواصل مع مجتمع شات آت{{ else }}Ways to connect with the ChatAt community{{ end }}"
+    }
+  ];
+  
+  function performSearch() {
+    const query = searchInput.value.toLowerCase().trim();
+    
+    if (query.length < 2) {
+      searchResults.style.display = 'none';
+      return;
+    }
+    
+    const results = searchData.filter(item => 
+      item.title.toLowerCase().includes(query) || 
+      item.content.toLowerCase().includes(query)
+    );
+    
+    displayResults(results, query);
+  }
+  
+  function displayResults(results, query) {
+    searchResults.innerHTML = '';
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = `
+        <div class="no-results">
+          {{ if eq .Site.Language.Lang "ar" }}لم يتم العثور على نتائج للبحث عن "${query}"{{ else }}No results found for "${query}"{{ end }}
+        </div>
+      `;
+    } else {
+      results.forEach(result => {
+        const resultElement = document.createElement('div');
+        resultElement.className = 'search-result';
+        resultElement.innerHTML = `
+          <a href="${result.url}">
+            <h3>${result.title}</h3>
+            <p>${result.content}</p>
+          </a>
+        `;
+        searchResults.appendChild(resultElement);
+      });
+    }
+    
+    searchResults.style.display = 'block';
+  }
+  
+  searchBtn.addEventListener('click', performSearch);
+  searchInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      performSearch();
+    }
+  });
+  
+  // Hide results when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.search-container')) {
+      searchResults.style.display = 'none';
+    }
+  });
+});
+</script>
+

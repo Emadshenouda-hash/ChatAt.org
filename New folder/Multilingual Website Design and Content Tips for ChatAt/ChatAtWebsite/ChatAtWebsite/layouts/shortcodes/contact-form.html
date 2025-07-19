@@ -1,0 +1,53 @@
+<!-- Contact Form Shortcode -->
+<div class="contact-form">
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contact-form">
+    <div class="form-group">
+      <label for="name">{{ if eq .Site.Language.Lang "ar" }}الاسم{{ else }}Name{{ end }} *</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="email">{{ if eq .Site.Language.Lang "ar" }}البريد الإلكتروني{{ else }}Email{{ end }} *</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="subject">{{ if eq .Site.Language.Lang "ar" }}الموضوع{{ else }}Subject{{ end }}</label>
+      <input type="text" id="subject" name="subject">
+    </div>
+    
+    <div class="form-group">
+      <label for="message">{{ if eq .Site.Language.Lang "ar" }}الرسالة{{ else }}Message{{ end }} *</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+    
+    <!-- Honeypot field for spam protection -->
+    <input type="text" name="_gotcha" style="display:none">
+    
+    <!-- Hidden fields for Formspree configuration -->
+    <input type="hidden" name="_subject" value="New contact form submission from ChatAt">
+    <input type="hidden" name="_next" value="{{ .Site.BaseURL }}{{ if eq .Site.Language.Lang "ar" }}/ar{{ end }}/thank-you/">
+    
+    <button type="submit" class="btn">
+      {{ if eq .Site.Language.Lang "ar" }}إرسال الرسالة{{ else }}Send Message{{ end }}
+    </button>
+  </form>
+</div>
+
+<script>
+// Form submission handling
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  const submitBtn = this.querySelector('button[type="submit"]');
+  const originalText = submitBtn.textContent;
+  
+  submitBtn.textContent = '{{ if eq .Site.Language.Lang "ar" }}جاري الإرسال...{{ else }}Sending...{{ end }}';
+  submitBtn.disabled = true;
+  
+  // Re-enable button after 3 seconds in case of error
+  setTimeout(() => {
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
+  }, 3000);
+});
+</script>
+
