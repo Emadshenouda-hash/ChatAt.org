@@ -59,25 +59,29 @@ buildExpired = false
       weight = 20
     [[languages.ar.menu.main]]
       identifier = "contact"
-      name = "تواصل"
+      name = "تواصل معنا"
       url = "/contact/"
       weight = 30
 
 [params]
-  defaultTheme = "auto"
+  defaultTheme = "dark"               # Use "dark", "light", or "auto"
   disableThemeToggle = false
-  ShowReadingTime = true
+  ShowReadingTime = false
   ShowShareButtons = true
   ShowPostNavLinks = true
-  ShowBreadCrumbs = true
+  ShowBreadCrumbs = false
   ShowCodeCopyButtons = true
-  ShowWordCount = true
+  ShowWordCount = false
   ShowRss = true
   disableScrollToTop = false
-  hideFooter = false
+  hideFooter = true
   ShowLastmod = true
   ShowToc = true
   TocOpen = true
+
+[params.assets]
+  customCSS = ["css/custom.css"]
+
 
 [outputs]
   home = ["HTML", "JSON"]
