@@ -64,7 +64,7 @@ buildExpired = false
       weight = 30
 
 [params]
-  defaultTheme = "dark"               # Use "dark", "light", or "auto"
+  defaultTheme = "dark"
   disableThemeToggle = false
   ShowReadingTime = false
   ShowShareButtons = true
@@ -82,7 +82,6 @@ buildExpired = false
 [params.assets]
   customCSS = ["css/custom.css"]
 
-
 [outputs]
   home = ["HTML", "JSON"]
 
@@ -93,6 +92,11 @@ buildExpired = false
   style = "github"
 
 [module]
-imports = [
-  { path = "github.com/adityatelange/hugo-PaperMod" }
-]
+  [[module.imports]]
+    path = "github.com/adityatelange/hugo-PaperMod"
+
+[[redirects]]
+  from = "https://chatat1.netlify.app/*"
+  to = "https://chatat.org/:splat"
+  status = 301
+  force = true
