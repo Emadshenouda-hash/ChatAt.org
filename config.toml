@@ -13,15 +13,14 @@ buildExpired = false
 
 [languages]
   [languages.en]
-    contentDir = "content"
+    contentDir = "content/english"
     languageName = "English"
     languageCode = "en-us"
     weight = 1
     title = "ChatAt"
-    [languages.en.params]
-      [languages.en.params.homeInfoParams]
-        Title = "Welcome to ChatAt!"
-        Content = "Your lightweight, accessible platform for sharing written content."
+    [languages.en.params.homeInfoParams]
+      Title = "Welcome to ChatAt!"
+      Content = "Your lightweight, accessible platform for sharing written content."
     [[languages.en.menu.main]]
       identifier = "about"
       name = "About"
@@ -39,16 +38,15 @@ buildExpired = false
       weight = 30
 
   [languages.ar]
-    contentDir = "content"
+    contentDir = "content/arabic"
     languageName = "العربية"
     languageCode = "ar-sa"
     weight = 2
     title = "شات آت"
     rtl = true
-    [languages.ar.params]
-      [languages.ar.params.homeInfoParams]
-        Title = "مرحباً بكم في شات آت!"
-        Content = "منصتكم الخفيفة والمتاحة لمشاركة المحتوى المكتوب."
+    [languages.ar.params.homeInfoParams]
+      Title = "مرحباً بكم في شات آت!"
+      Content = "منصتكم الخفيفة والمتاحة لمشاركة المحتوى المكتوب."
     [[languages.ar.menu.main]]
       identifier = "about"
       name = "حول"

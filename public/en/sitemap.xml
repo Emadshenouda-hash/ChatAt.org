@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://chatat1.netlify.app/posts/</loc>
-    <lastmod>2025-07-18T16:12:31+03:00</lastmod>
-  </url><url>
     <loc>https://chatat1.netlify.app/</loc>
     <lastmod>2025-07-18T16:12:31+03:00</lastmod>
     <xhtml:link
@@ -18,9 +15,19 @@
                 href="https://chatat1.netlify.app/"
                 />
   </url><url>
-    <loc>https://chatat1.netlify.app/about/</loc>
+    <loc>https://chatat1.netlify.app/arabic/</loc>
+    <lastmod>2025-07-18T16:12:31+03:00</lastmod>
   </url><url>
-    <loc>https://chatat1.netlify.app/books/</loc>
+    <loc>https://chatat1.netlify.app/english/</loc>
+    <lastmod>2025-07-18T16:12:31+03:00</lastmod>
+  </url><url>
+    <loc>https://chatat1.netlify.app/arabic/about/</loc>
+  </url><url>
+    <loc>https://chatat1.netlify.app/english/about/</loc>
+  </url><url>
+    <loc>https://chatat1.netlify.app/arabic/books/</loc>
+  </url><url>
+    <loc>https://chatat1.netlify.app/english/books/</loc>
   </url><url>
     <loc>https://chatat1.netlify.app/categories/</loc>
     <xhtml:link
@@ -34,7 +41,9 @@
                 href="https://chatat1.netlify.app/categories/"
                 />
   </url><url>
-    <loc>https://chatat1.netlify.app/contact/</loc>
+    <loc>https://chatat1.netlify.app/arabic/contact/</loc>
+  </url><url>
+    <loc>https://chatat1.netlify.app/english/contact/</loc>
   </url><url>
     <loc>https://chatat1.netlify.app/tags/</loc>
     <xhtml:link
