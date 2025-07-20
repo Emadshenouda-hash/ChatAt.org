@@ -1,14 +1,23 @@
 backend:
   name: git-gateway
-  branch: master  # or main, depending on your GitHub branch name
+  branch: master  # Make sure your repo uses this branch
 
-media_folder: "static/images/uploads"
-public_folder: "/images/uploads"
+media_folder: "static/images/uploads"   # Where images will be stored in the repo
+public_folder: "/images/uploads"        # How the images will be accessed publicly
 
 collections:
   - name: "pages"
-    label: "Pages"
+    label: "Pages (English)"
     folder: "content/english"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages_ar"
+    label: "Pages (Arabic)"
+    folder: "content/arabic"
     create: true
     slug: "{{slug}}"
     fields:
