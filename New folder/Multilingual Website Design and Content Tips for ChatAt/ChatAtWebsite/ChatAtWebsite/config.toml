@@ -1,7 +1,10 @@
-baseURL = "http://example.org/"
+baseURL = "https://chatat1.netlify.app/"
 languageCode = "en-us"
 title = "ChatAt"
 theme = ["PaperMod"]
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 
 enableRobotsTXT = true
 buildDrafts = false
