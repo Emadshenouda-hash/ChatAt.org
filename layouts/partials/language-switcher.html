@@ -1,0 +1,18 @@
+{{ if .IsTranslated }}
+<div class="lang-switch">
+  {{ range .AllTranslations }}
+    <a href="{{ .RelPermalink }}" 
+       class="{{ if eq . $ }}active{{ end }}"
+       title="{{ .Language.LanguageName }}">
+      {{ if eq .Language.Lang "ar" }}
+        العربية
+      {{ else if eq .Language.Lang "en" }}
+        English
+      {{ else }}
+        {{ .Language.LanguageName }}
+      {{ end }}
+    </a>
+  {{ end }}
+</div>
+{{ end }}
+
