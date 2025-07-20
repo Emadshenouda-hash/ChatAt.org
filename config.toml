@@ -13,7 +13,7 @@ buildExpired = false
 
 [languages]
   [languages.en]
-    contentDir = "content/english"
+    
     languageName = "English"
     languageCode = "en-us"
     weight = 1
