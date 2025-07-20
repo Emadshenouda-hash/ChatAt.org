@@ -1,4 +1,3 @@
---- 
-title: "Welcome" 
---- 
-Welcome to the English section of ChatAt! 
++++
+title = "مرحباً بكم في شات آت!"
++++
