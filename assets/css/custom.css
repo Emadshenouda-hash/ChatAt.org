@@ -1,4 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 body {
-  background-color: #f0f0f0;
-  font-family: "Segoe UI", sans-serif;
+  background-color: #f9f9fb;
+  font-family: 'Inter', sans-serif;
 }
+
+/* 🎨 Headings */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* 🔗 Links */
+a {
+  color: #0077cc;
+  text-decoration: none;
+  border-bottom: 1px dotted #0077cc;
+}
+
+a:hover {
+  color: #005999;
+  border-bottom: 1px solid #005999;
+}
+
+/* 🔲 Cards or post previews */
+.post-entry {
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  padding: 1.2rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* 📦 Tag/Category Badges */
+.tag {
+  background-color: #e0f0ff;
+  color: #005ea6;
+  padding: 0.2rem 0.6rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+/* 🌓 Dark Mode Support (optional) */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #eee;
+  }
+  .post-entry {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+  }
+  a {
+    color: #7abaff;
+    border-bottom: 1px dotted #7abaff;
+  }
+}
+

@@ -5,4 +5,5 @@
 /*  https://chatat.org/:splat 301!  Host=chatat1.netlify.app
 
 # Netlify CMS support
-#/admin/*  /admin/index.html  200
+/admin/*  /admin/index.html  200
+
