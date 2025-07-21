@@ -6,6 +6,17 @@
     <title>Content Manager</title>
     <!-- ✅ Netlify Identity Widget script -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      // Check if there's an invite token in the URL
+      if (window.location.hash.includes("invite_token")) {
+        window.netlifyIdentity.on("init", function(user) {
+          if (!user) {
+            // If no user is logged in, open the modal to handle the invite
+            window.netlifyIdentity.open();
+          }
+        });
+      }
+    </script>
   </head>
   <body>
     <!-- ✅ REQUIRED for Decap CMS to render -->
