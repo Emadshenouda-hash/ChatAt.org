@@ -4,7 +4,7 @@ backend:
   auth_client_id: uCe8wg51HnOASqsmgrWtTXUSPpljmP6A
   auth_url: https://dev-az01750y0vdro7u5.us.auth0.com
   auth_token_url: https://dev-az01750y0vdro7u5.us.auth0.com/oauth/token
-  auth_scope: "repo,user"
+  auth_scope: "repo"
 
 media_folder: "static/images/uploads"   # Where images will be stored in the repo
 public_folder: "/images/uploads"        # How the images will be accessed publicly
