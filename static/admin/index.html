@@ -1,23 +1,13 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Content Manager</title>
-    <!-- ✅ Netlify Identity Widget script -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-      // Check if there's an invite token in the URL
-      if (window.location.hash.includes("invite_token")) {
-        window.netlifyIdentity.on("init", function(user) {
-          if (!user) {
-            // If no user is logged in, open the modal to handle the invite
-            window.netlifyIdentity.open();
-          }
-        });
-      }
-    </script>
-  </head>
+ 
+<head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Content Manager</title>
+ <!-- No Netlify Identity Widget needed for Auth0 -->
+ </head>
+
   <body>
     <!-- ✅ REQUIRED for Decap CMS to render -->
     <div id="nc-root"></div>
