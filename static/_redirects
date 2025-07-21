@@ -1,2 +1,5 @@
-https://chatat1.netlify.app/*  https://chatat.org/:splat  301!
-/*    /admin/index.html   200
+# Redirect everything EXCEPT admin and login paths to your custom domain
+/*     https://chatat.org/:splat 301!
+/admin/*   /admin/index.html 200
+/api/*     /.netlify/functions/:splat 200
+/.netlify/identity/*  /.netlify/identity/:splat 200
