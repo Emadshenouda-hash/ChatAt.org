@@ -1,2 +1,2 @@
-/admin/*    /admin/index.html   200
-/*          https://chatat.org/:splat   301!
+https://chatat1.netlify.app/*  https://chatat.org/:splat  301!
+/*    /admin/index.html   200
