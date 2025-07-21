@@ -1,4 +1,4 @@
-baseURL = "https://chatat1.netlify.app/"
+baseURL = "https://chatat1.org/"
 languageCode = "en-us"
 title = "ChatAt"
 theme = ["PaperMod"]
