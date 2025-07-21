@@ -1,5 +1,7 @@
-# Only redirect requests that come from Netlify subdomain
-# Keep admin and identity paths working
-https://chatat1.netlify.app/*   https://chatat.org/:splat 301!
+# Redirect ONLY traffic from Netlify subdomain to your custom domain
+# Prevent infinite loop
+/*    https://chatat.org/:splat 301!    Host=chatat1.netlify.app
+
+# Keep CMS working
 /admin/*    /admin/index.html 200
 /.netlify/identity/*  /.netlify/identity/:splat 200
