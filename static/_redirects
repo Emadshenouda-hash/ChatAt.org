@@ -1,5 +1,5 @@
-# Redirect everything EXCEPT admin and login paths to your custom domain
-/*     https://chatat.org/:splat 301!
-/admin/*   /admin/index.html 200
-/api/*     /.netlify/functions/:splat 200
+# Only redirect requests that come from Netlify subdomain
+# Keep admin and identity paths working
+https://chatat1.netlify.app/*   https://chatat.org/:splat 301!
+/admin/*    /admin/index.html 200
 /.netlify/identity/*  /.netlify/identity/:splat 200
