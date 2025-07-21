@@ -96,7 +96,7 @@ buildExpired = false
     path = "github.com/adityatelange/hugo-PaperMod"
 
 [[redirects]]
-  from = "https://chatat1.netlify.app/*"
-  to = "https://chatat.org/:splat"
-  status = 301
-  force = true
+from =
+from = "/*"
+to = "/index.html"
+status = 200
